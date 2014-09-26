@@ -27,7 +27,7 @@
   <body class="gradient-green">
     <div id='page-container'>
       <div id="role-logo">Role App</div>
-      <p>Role is an upcoming group storytelling game from The Soap Collective.<br />Sign up now and be among the first to learn more.</p>
+      <p>Role is an upcoming group storytelling game from <a href="http://www.thesoapcollective.com" target="blank">The Soap Collective</a>.<br />Sign up now and be among the first to learn more.</p>
       <p>Your adventure starts soon!</p>
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
@@ -88,12 +88,12 @@
       });
 
       // Google Analytics
-      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      // ga('create', 'UA-11359166-1', 'auto');
-      // ga('send', 'pageview');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-11359166-7', 'auto');
+      ga('send', 'pageview');
     </script>
   </body>
 </html>
