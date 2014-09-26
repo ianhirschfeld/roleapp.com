@@ -4,13 +4,13 @@
     <meta charset='utf-8'>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content="We're a company of storytellers." name='description'>
+    <meta content="A group storytelling game from The Soap Collective." name='description'>
 
     <meta content='Role App' property='og:title'>
     <meta content='Role App' property='og:site_name'>
     <meta content='http://www.roleapp.com' property='og:url'>
+    <meta content='A group storytelling game from The Soap Collective.' property='og:description'>
     <?php /*
-    <meta content="We're a company of storytellers. Following the tradition that began with spoken word and evolved into books, film, and games, Soap is building new ways for people to share narrative experiences. We believe in leveraging the latest technology to imagine better worlds and connect people in meaningful ways." property='og:description'>
     <meta content='http://www.thesoapcollective.com/images/soap_open_graph.jpg' property='og:image'>
     <meta content='158186024916' property='fb:app_id'>
     */ ?>
@@ -18,7 +18,7 @@
     <link href='http://www.roleapp.com/favicon.png' rel='shortcut icon'>
     <link href='http://www.roleapp.com/favicon.png' rel='apple-touch-icon'>
 
-    <title> The Soap Collective</title>
+    <title>Role App</title>
 
     <link href='stylesheets/normalize.css' rel='stylesheet' type='text/css' />
     <link href='stylesheets/main.css' rel='stylesheet' type='text/css' />
