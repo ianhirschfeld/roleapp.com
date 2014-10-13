@@ -11,6 +11,10 @@ html {
   font-family: $font-family;
   font-size: $font-size;
   line-height: 1;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-small;
+  }
 }
 
 body{
@@ -34,6 +38,15 @@ h1 {
   background: image-url('role_logo.png') no-repeat 0 0;
   background-size: 229px;
   height: 120px;
+
+  @include respond-to('phone') {
+    position: relative;
+    top: -18px;
+  }
+
+  @include respond-to('phone-small') {
+    top: auto;
+  }
 }
 
 h2 {
@@ -42,6 +55,10 @@ h2 {
   font-weight: bold;
   letter-spacing: 1px;
   line-height: 1.2;
+
+  @include respond-to('tablet') {
+    font-size: 1.5rem;
+  }
 }
 
 p {
@@ -89,11 +106,32 @@ p {
 #page-header {
   padding-top: 18px;
   height: 262px;
+
+  @include respond-to('tablet') {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @include respond-to('phone') {
+    height: 190px;
+  }
+
+  @include respond-to('phone-small') {
+    height: 244px;
+  }
 }
 
 .navbar {
   @include alt-clearfix;
   margin-bottom: 16px;
+
+  @include respond-to('phone') {
+    margin-bottom: 0;
+  }
+
+  @include respond-to('phone-small') {
+    margin-bottom: 34px;
+  }
 }
 
 .navbar-left {
@@ -130,13 +168,14 @@ p {
   display: inline-block;
   background: #fff;
   color: $red;
-  font-size: 0.6rem;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .social-icon {
   display: inline-block;
   color: #fff;
+  font-size: 35px;
 }
 
 /*=============================================================================
@@ -146,6 +185,11 @@ p {
   padding: $section-padding 0;
   text-align: center;
   font-size: 0.6rem;
+
+  @include respond-to('phone') {
+    padding-top: 0;
+    padding-bottom: $section-padding-phone;
+  }
 }
 
 .thesoapcollective {
@@ -197,10 +241,43 @@ p {
   p {
     margin-bottom: $section-padding;
   }
+
+  @include respond-to('phone') {
+    section {
+      padding: $section-padding-phone 30px;
+    }
+  }
+}
+
+.truly-social {
+  section {
+    padding-top: $section-padding * 2;
+  }
+
+  @include respond-to('tablet') {
+    section {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @include respond-to('tablet-small') {
+    section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @include respond-to('phone') {
+    section {
+      padding-top: $section-padding-phone;
+    }
+  }
 }
 
 .phone-section {
   position: relative;
+  overflow: hidden;
 
   .multi-phones & {
     height: 435px + $section-padding;
@@ -217,21 +294,38 @@ p {
   .dream-of-better-worlds & {
     height: 450px + $section-padding;
   }
+
+  @include respond-to('tablet') {
+    .multi-phones & {
+      height: 383px + $section-padding;
+    }
+  }
+
+  @include respond-to('phone') {
+    padding-top: $section-padding-phone;
+
+    .multi-phones &,
+    .pick-up-and-play &,
+    .become-the-hero &,
+    .dream-of-better-worlds & {
+      height: auto;
+    }
+  }
 }
 
 .phone-section-left {
   text-align: left;
 
-  .section-img {
-    right: 0;
+  @include respond-to('phone') {
+    text-align: center;
   }
 }
 
 .phone-section-right {
   text-align: right;
 
-  .section-img {
-    left: 0;
+  @include respond-to('phone') {
+    text-align: center;
   }
 }
 
@@ -253,6 +347,77 @@ p {
   .dream-of-better-worlds & {
     padding-right: 368px + 86px;
   }
+
+  @include respond-to('tablet') {
+    .phone-section-left & {
+      padding-left: $snippet-padding-tablet;
+    }
+
+    .phone-section-right & {
+      padding-right: $snippet-padding-tablet;
+    }
+
+    .multi-phones & {
+      padding-left: 576px - 64px + 26px;
+    }
+  }
+
+  @include respond-to('tablet-small') {
+    .phone-section-left & {
+      padding-left: $snippet-padding-tablet-small;
+    }
+
+    .phone-section-right & {
+      padding-right: $snippet-padding-tablet-small;
+    }
+
+    .multi-phones & {
+      padding-left: 576px - 268px + 26px;
+    }
+
+    .pick-up-and-play & {
+      padding-right: 368px + $phone-img-offset-tablet-small + 40px;
+    }
+
+    .become-the-hero & {
+      padding-left: 368px + $phone-img-offset-tablet-small + 40px;
+    }
+
+    .dream-of-better-worlds & {
+      padding-right: 368px + $phone-img-offset-tablet-small + 40px;
+    }
+  }
+
+  @include respond-to('phone') {
+    @include vertical-align-reset;
+
+    .phone-section-left &,
+    .phone-section-right & {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .multi-phones & {
+      padding-bottom: 383px + $section-padding-phone;
+    }
+
+    .pick-up-and-play & {
+      padding-bottom: 486px + $section-padding-phone;
+    }
+
+    .become-the-hero &,
+    .dream-of-better-worlds & {
+      padding-bottom: 450px + $section-padding-phone;
+    }
+  }
+
+  @include respond-to('phone-small') {
+    .phone-section-left &,
+    .phone-section-right & {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
 }
 
 .section-img {
@@ -260,6 +425,43 @@ p {
   bottom: 0;
   background-position: 0 0;
   background-repeat: no-repeat;
+
+  .phone-section-left & {
+    right: $phone-img-offset;
+  }
+
+  .phone-section-right & {
+    left: $phone-img-offset;
+  }
+
+  @include respond-to('tablet') {
+    .phone-section-left & {
+      right: $phone-img-offset-tablet;
+    }
+
+    .phone-section-right & {
+      left: $phone-img-offset-tablet;
+    }
+  }
+
+  @include respond-to('tablet-small') {
+    .phone-section-left & {
+      right: $phone-img-offset-tablet-small;
+    }
+
+    .phone-section-right & {
+      left: $phone-img-offset-tablet-small;
+    }
+  }
+
+  @include respond-to('phone') {
+    .phone-section-left &,
+    .phone-section-right & {
+      @include translateX(-50%);
+      left: 50%;
+      right: auto;
+    }
+  }
 }
 
 .img-multi-phones {
@@ -267,6 +469,23 @@ p {
   height: 435px;
   background-image: image-url('multi_phones.jpg');
   background-size: 654px 435px;
+
+  @include respond-to('tablet') {
+    width: 576px;
+    height: 383px;
+    background-size: 576px 383px;
+    left: -64px !important;
+  }
+
+  @include respond-to('tablet-small') {
+    left: -268px !important;
+  }
+
+  @include respond-to('phone') {
+    @include translateX(-50%);
+    left: 50% !important;
+    right: auto;
+  }
 }
 
 .img-phone-01 {
@@ -295,15 +514,32 @@ p {
   max-width: 720px;
   margin: 0 auto;
   position: relative;
+
+  @include respond-to('phone') {
+    .coming-soon & {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    .truly-social & {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
 }
 
 input[type=email] {
   @include border-radius(72px);
   @include box-shadow(0 3px 24px rgba(0,0,0,0.1));
   width: 100%;
-  padding: 15px 38px;
+  height: 72px;
+  padding: 15px 82px 15px 38px;
   border: 2px solid #d9d9d9;
   font-size: $font-size;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-small;
+  }
 }
 
 .mc-submit-bg,

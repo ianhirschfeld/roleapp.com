@@ -18,6 +18,11 @@
   top: 50%;
 }
 
+@mixin vertical-align-reset {
+  @include translateY(0);
+  top: auto;
+}
+
 @mixin respond-to($size) {
   @if $size == 'desktop-large' {
     @media only screen and (min-width: 1201px) {
@@ -40,7 +45,7 @@
     }
   }
   @else if $size == 'phone-small' {
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 460px) {
       @content
     }
   }

@@ -1,4 +1,4 @@
-var $email = $('#mce-EMAIL');
+var $email = $('.email');
 
 var delay = (function(){
   var timer = 0;
@@ -13,11 +13,10 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+
 $email.keyup(function(){
   var $this = $(this)
   delay(function(){
-    console.log("doinasgasdf asdf")
-    console.log($this.val())
     if (validateEmail($this.val())) {
       $this.closest('form').addClass('is-valid');
     } else {
@@ -29,4 +28,10 @@ $email.keyup(function(){
 $('.sign-up').click(function(event){
   event.preventDefault()
   // Scroll to first form
+});
+
+$(document).ready(function(){
+  if ($(window).width() <= 400) {
+    $email.attr('placeholder', 'Sign up now!');
+  }
 });
