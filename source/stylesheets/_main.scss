@@ -543,6 +543,7 @@ input[type=email] {
 }
 
 .mc-submit-bg,
+.mc-submit-bg-alt,
 input[type=submit] {
   @include border-radius(68px);
   width: 68px;
@@ -552,11 +553,26 @@ input[type=submit] {
   right: 2px;
 }
 
+.mc-submit-bg,
+.mc-submit-bg-alt {
+  @include transition(opacity 0.5s);
+}
+
 .mc-submit-bg {
+  @include opacity(1);
   @include background-image(linear-gradient($red, $peach));
 
   .is-valid & {
-    @include background-image(linear-gradient($ocean, $green));
+    @include opacity(0);
+  }
+}
+
+.mc-submit-bg-alt {
+  @include opacity(0);
+  @include background-image(linear-gradient($ocean, $green));
+
+  .is-valid & {
+    @include opacity(1);
   }
 }
 
