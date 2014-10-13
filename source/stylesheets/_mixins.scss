@@ -1,0 +1,64 @@
+@mixin alt-clearfix {
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+@mixin vertical-align {
+  @include translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+@mixin respond-to($size) {
+  @if $size == 'desktop-large' {
+    @media only screen and (min-width: 1201px) {
+      @content
+    }
+  }
+  @else if $size == 'tablet' {
+    @media only screen and (max-width: 1024px) {
+      @content
+    }
+  }
+  @else if $size == 'tablet-small' {
+    @media only screen and (max-width: 768px) {
+      @content
+    }
+  }
+  @else if $size == 'phone' {
+    @media only screen and (max-width: 640px) {
+      @content
+    }
+  }
+  @else if $size == 'phone-small' {
+    @media only screen and (max-width: 320px) {
+      @content
+    }
+  }
+}
+
+@mixin retina($density: '2x') {
+  @if $density == '2x' {
+    @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi) {
+        @content
+    }
+  }
+  @else if $density == '3x' {
+    @media
+      only screen and (-webkit-min-device-pixel-ratio: 3),
+      only screen and (min-resolution: 192dpi) {
+        @content
+    }
+  }
+}

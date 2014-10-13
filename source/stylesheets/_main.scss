@@ -1,0 +1,335 @@
+* {
+  @include box-sizing(border-box);
+  outline: none;
+}
+
+/*=============================================================================
+  TAGS
+=============================================================================*/
+html {
+  color: $text-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: 1;
+}
+
+body{
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  max-width: $max-page-width;
+  margin: 0 auto;
+}
+
+h1 {
+  @include text-overflow;
+  width: 229px;
+  height: 120px;
+  margin: 0 auto;
+  background: image-url('role_logo.png') no-repeat 0 0;
+  background-size: 229px;
+  height: 120px;
+}
+
+h2 {
+  margin: 0 0 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/*=============================================================================
+  HELPERS
+=============================================================================*/
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gray {
+  color: $gray;
+}
+
+.green {
+  color: $green;
+}
+
+.ocean {
+  color: $ocean;
+}
+
+.peach {
+  color: $peach;
+}
+
+.pink {
+  color: $pink;
+}
+
+.red {
+  color: $red;
+}
+
+/*=============================================================================
+  HEADER
+=============================================================================*/
+#page-header {
+  padding-top: 18px;
+  height: 262px;
+}
+
+.navbar {
+  @include alt-clearfix;
+  margin-bottom: 16px;
+}
+
+.navbar-left {
+  float: left;
+}
+
+.navbar-right {
+  float: right;
+
+  li {
+    margin-right: 18px;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.sign-up,
+.social-icon {
+  @include opacity(0.5);
+  @include transition(opacity 0.25s);
+
+  &:hover,
+  &:focus {
+    @include opacity(1);
+  }
+}
+
+.sign-up {
+  @include border-radius(36px);
+  padding: 9px 24px;
+  display: inline-block;
+  background: #fff;
+  color: $red;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+.social-icon {
+  display: inline-block;
+  color: #fff;
+}
+
+/*=============================================================================
+  FOOTER
+=============================================================================*/
+#page-footer {
+  padding: $section-padding 0;
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.thesoapcollective {
+  color: $text-color;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+/*=============================================================================
+  CONTENT
+=============================================================================*/
+/* ----- Backgrounds ----- */
+.bg-white {
+  background: #fff;
+}
+
+.bg-gray {
+  background: #f2f2f2;
+}
+
+.bg-peach-gradient {
+  @include background-image(linear-gradient($red, $peach));
+  color: #fff;
+}
+
+.bg-green-gradient {
+  @include background-image(linear-gradient($ocean, $green));
+  color: #fff;
+}
+
+.bg-pink-gradient {
+  @include background-image(linear-gradient($gray, $pink));
+  color: #fff;
+}
+
+/* ----- Sections ----- */
+.coming-soon,
+.truly-social {
+  text-align: center;
+
+  section {
+    padding: $section-padding 100px;
+  }
+
+  p {
+    margin-bottom: $section-padding;
+  }
+}
+
+.phone-section {
+  position: relative;
+
+  .multi-phones & {
+    height: 435px + $section-padding;
+  }
+
+  .pick-up-and-play & {
+    height: 486px + $section-padding;
+  }
+
+  .become-the-hero & {
+    height: 450px + $section-padding;
+  }
+
+  .dream-of-better-worlds & {
+    height: 450px + $section-padding;
+  }
+}
+
+.phone-section-left {
+  text-align: left;
+
+  .section-img {
+    right: 0;
+  }
+}
+
+.phone-section-right {
+  text-align: right;
+
+  .section-img {
+    left: 0;
+  }
+}
+
+.section-snippet {
+  @include vertical-align;
+
+  .multi-phones & {
+    padding-left: 654px + 46px;
+  }
+
+  .pick-up-and-play & {
+    padding-right: 368px + 86px;
+  }
+
+  .become-the-hero & {
+    padding-left: 368px + 86px;
+  }
+
+  .dream-of-better-worlds & {
+    padding-right: 368px + 86px;
+  }
+}
+
+.section-img {
+  position: absolute;
+  bottom: 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.img-multi-phones {
+  width: 654px;
+  height: 435px;
+  background-image: image-url('multi_phones.jpg');
+  background-size: 654px 435px;
+}
+
+.img-phone-01 {
+  width: 368px;
+  height: 486px;
+  background-image: image-url('phone_01.png');
+  background-size: 368px 486px;
+}
+
+.img-phone-02 {
+  width: 368px;
+  height: 450px;
+  background-image: image-url('phone_02.png');
+  background-size: 368px 450px;
+}
+
+.img-phone-03 {
+  width: 368px;
+  height: 450px;
+  background-image: image-url('phone_03.png');
+  background-size: 368px 450px;
+}
+
+/* ----- Mailchimp ----- */
+#mc_embed_signup {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+input[type=email] {
+  @include border-radius(72px);
+  @include box-shadow(0 3px 24px rgba(0,0,0,0.1));
+  width: 100%;
+  padding: 15px 38px;
+  border: 2px solid #d9d9d9;
+  font-size: $font-size;
+}
+
+.mc-submit-bg,
+input[type=submit] {
+  @include border-radius(68px);
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.mc-submit-bg {
+  @include background-image(linear-gradient($red, $peach));
+
+  .is-valid & {
+    @include background-image(linear-gradient($ocean, $green));
+  }
+}
+
+input[type=submit] {
+  background: image-url('arrow_right.png') no-repeat 26px center;
+  background-size: 22px 36px;
+  border: none;
+
+  #mc_embed_signup.is-valid & {
+    background-color: #b2cb5c;
+  }
+}
