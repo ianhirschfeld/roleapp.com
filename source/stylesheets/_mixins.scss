@@ -24,28 +24,28 @@
 }
 
 @mixin respond-to($size) {
-  @if $size == 'desktop-large' {
-    @media only screen and (min-width: 1201px) {
+  @if $size == 'desktop' {
+    @media only screen and (max-width: 1200px) {
       @content
     }
   }
   @else if $size == 'tablet' {
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1023px) {
       @content
     }
   }
   @else if $size == 'tablet-small' {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       @content
     }
   }
   @else if $size == 'phone' {
-    @media only screen and (max-width: 640px) {
+    @media only screen and (max-width: 639px) {
       @content
     }
   }
   @else if $size == 'phone-small' {
-    @media only screen and (max-width: 460px) {
+    @media only screen and (max-width: 459px) {
       @content
     }
   }

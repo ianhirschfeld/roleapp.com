@@ -12,7 +12,7 @@ html {
   font-size: $font-size;
   line-height: 1;
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     font-size: $font-size-small;
   }
 }
@@ -39,12 +39,12 @@ h1 {
   background-size: 229px;
   height: 120px;
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     position: relative;
     top: -18px;
   }
 
-  @include respond-to('phone-small') {
+  @include respond-to('phone') {
     top: auto;
   }
 }
@@ -56,7 +56,7 @@ h2 {
   letter-spacing: 1px;
   line-height: 1.2;
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     font-size: 1.5rem;
   }
 }
@@ -107,16 +107,16 @@ p {
   padding-top: 18px;
   height: 262px;
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     height: 190px;
   }
 
-  @include respond-to('phone-small') {
+  @include respond-to('phone') {
     height: 244px;
   }
 }
@@ -125,11 +125,11 @@ p {
   @include alt-clearfix;
   margin-bottom: 16px;
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     margin-bottom: 0;
   }
 
-  @include respond-to('phone-small') {
+  @include respond-to('phone') {
     margin-bottom: 34px;
   }
 }
@@ -186,7 +186,7 @@ p {
   text-align: center;
   font-size: 0.6rem;
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     padding-top: 0;
     padding-bottom: $section-padding-phone;
   }
@@ -242,7 +242,7 @@ p {
     margin-bottom: $section-padding;
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     section {
       padding: $section-padding-phone 30px;
     }
@@ -254,21 +254,21 @@ p {
     padding-top: $section-padding * 2;
   }
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     section {
       padding-left: 40px;
       padding-right: 40px;
     }
   }
 
-  @include respond-to('tablet-small') {
+  @include respond-to('tablet') {
     section {
       padding-left: 20px;
       padding-right: 20px;
     }
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     section {
       padding-top: $section-padding-phone;
     }
@@ -295,13 +295,13 @@ p {
     height: 450px + $section-padding;
   }
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     .multi-phones & {
       height: 383px + $section-padding;
     }
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     padding-top: $section-padding-phone;
 
     .multi-phones &,
@@ -316,7 +316,7 @@ p {
 .phone-section-left {
   text-align: left;
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     text-align: center;
   }
 }
@@ -324,7 +324,7 @@ p {
 .phone-section-right {
   text-align: right;
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     text-align: center;
   }
 }
@@ -348,7 +348,7 @@ p {
     padding-right: 368px + 86px;
   }
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     .phone-section-left & {
       padding-left: $snippet-padding-tablet;
     }
@@ -362,7 +362,7 @@ p {
     }
   }
 
-  @include respond-to('tablet-small') {
+  @include respond-to('tablet') {
     .phone-section-left & {
       padding-left: $snippet-padding-tablet-small;
     }
@@ -388,7 +388,7 @@ p {
     }
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     @include vertical-align-reset;
 
     .phone-section-left &,
@@ -411,7 +411,7 @@ p {
     }
   }
 
-  @include respond-to('phone-small') {
+  @include respond-to('phone') {
     .phone-section-left &,
     .phone-section-right & {
       padding-left: 20px;
@@ -434,7 +434,7 @@ p {
     left: $phone-img-offset;
   }
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     .phone-section-left & {
       right: $phone-img-offset-tablet;
     }
@@ -444,7 +444,7 @@ p {
     }
   }
 
-  @include respond-to('tablet-small') {
+  @include respond-to('tablet') {
     .phone-section-left & {
       right: $phone-img-offset-tablet-small;
     }
@@ -454,7 +454,7 @@ p {
     }
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     .phone-section-left &,
     .phone-section-right & {
       @include translateX(-50%);
@@ -470,18 +470,18 @@ p {
   background-image: image-url('multi_phones.jpg');
   background-size: 654px 435px;
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     width: 576px;
     height: 383px;
     background-size: 576px 383px;
     left: -64px !important;
   }
 
-  @include respond-to('tablet-small') {
+  @include respond-to('tablet') {
     left: -268px !important;
   }
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     @include translateX(-50%);
     left: 50% !important;
     right: auto;
@@ -515,7 +515,7 @@ p {
   margin: 0 auto;
   position: relative;
 
-  @include respond-to('phone') {
+  @include respond-to('tablet-small') {
     .coming-soon & {
       margin-left: -20px;
       margin-right: -20px;
@@ -537,7 +537,7 @@ input[type=email] {
   border: 2px solid #d9d9d9;
   font-size: $font-size;
 
-  @include respond-to('tablet') {
+  @include respond-to('desktop') {
     font-size: $font-size-small;
   }
 }
