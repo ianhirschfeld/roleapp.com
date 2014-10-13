@@ -13,7 +13,6 @@ function validateEmail(email) {
   return re.test(email);
 }
 
-
 $email.keyup(function(){
   var $this = $(this)
   delay(function(){
@@ -25,9 +24,26 @@ $email.keyup(function(){
   }, 500);
 });
 
+$('.email-submit').hover(function(){
+  $(this).closest('form').addClass('is-hovering')
+}, function(){
+  $(this).closest('form').removeClass('is-hovering')
+});
+
 $('.sign-up').click(function(event){
   event.preventDefault()
-  // Scroll to first form
+  var $signup = $($email[0])
+  var offset = $signup.offset().top
+  if ($(window).width() <= 400) {
+    offset -= 320
+  } else {
+    offset -= 220
+  }
+  $('html, body').animate({
+    scrollTop: offset
+  }, 500, function(){
+    $signup.focus()
+  });
 });
 
 $(document).ready(function(){

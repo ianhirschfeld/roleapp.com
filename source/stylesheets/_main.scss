@@ -562,6 +562,10 @@ input[type=submit] {
   @include opacity(1);
   @include background-image(linear-gradient($red, $peach));
 
+  .is-hovering & {
+    @include opacity(0.8);
+  }
+
   .is-valid & {
     @include opacity(0);
   }
@@ -573,6 +577,10 @@ input[type=submit] {
 
   .is-valid & {
     @include opacity(1);
+  }
+
+  .is-valid.is-hovering & {
+    @include opacity(0.8);
   }
 }
 
