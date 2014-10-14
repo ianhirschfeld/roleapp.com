@@ -1,1 +1,2 @@
-//= require_tree .
+//= require wow
+//= require main

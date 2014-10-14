@@ -47,6 +47,10 @@ $('.sign-up').click(function(event){
 });
 
 $(document).ready(function(){
+  new WOW({
+    mobile: false
+  }).init();
+
   if ($(window).width() <= 400) {
     $email.attr('placeholder', 'Sign up now!');
   }
