@@ -1,3 +1,4 @@
+var $window = $(window);
 var $email = $('.email');
 
 var delay = (function(){
@@ -34,7 +35,7 @@ $('.sign-up').click(function(event){
   event.preventDefault()
   var $signup = $($email[0])
   var offset = $signup.offset().top
-  if ($(window).width() <= 400) {
+  if ($window.width() <= 400) {
     offset -= 320
   } else {
     offset -= 220
@@ -47,11 +48,13 @@ $('.sign-up').click(function(event){
 });
 
 $(document).ready(function(){
-  new WOW({
-    mobile: false
-  }).init();
+  if ($window.width() >= 768) {
+    new WOW({
+      mobile: false
+    }).init();
+  }
 
-  if ($(window).width() <= 400) {
+  if ($window.width() <= 400) {
     $email.attr('placeholder', 'Sign up now!');
   }
 });
