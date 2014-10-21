@@ -67,6 +67,9 @@ configure :build do
   # Use relative URLs
   activate :relative_assets
 
+  # Pretty URLs
+  activate :directory_indexes
+
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end

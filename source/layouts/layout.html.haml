@@ -22,7 +22,33 @@
     = stylesheet_link_tag 'all'
 
   %body{class: page_classes}
-    #page-container= yield
+    #page-container
+      %header#page-header.bg-peach-gradient
+        %section
+          .navbar
+            - if current_page.data.show_sign_up
+              .navbar-left
+                %a.sign-up{href: '#'} Sign up
+            .navbar-right
+              %ul.list-reset
+                %li>
+                  %a.icon-twitter-circled.social-icon{href: 'https://twitter.com/roleapp', target: '_blank'}
+                %li>
+                  %a.icon-facebook-circled.social-icon{href: 'https://facebook.com/roleapp', target: '_blank'}
+                %li>
+                  %a.icon-mail-circled.social-icon{href: 'mailto:hello@roleapp.com'}
+          %h1 Role - Imagine Together
+
+      %article#page-content= yield
+
+      %footer#page-footer
+        %p
+          A product of
+          %br>
+          %a.thesoapcollective{href: 'http://thesoapcollective.com', target: '_blank'} The Soap Collective
+          %br>
+          %br>
+          &copy; 2014, All rights reserved.
 
     %script{src: '//use.typekit.net/dhn8nfe.js', type: 'text/javascript'}
     %script{src: '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', type: 'text/javascript'}

@@ -11,6 +11,7 @@ html {
   font-family: $font-family;
   font-size: $font-size;
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 
   @include respond-to('desktop') {
     font-size: $font-size-tablet;
@@ -603,5 +604,41 @@ input[type=submit] {
 
   #mc_embed_signup.is-valid & {
     background-color: #b2cb5c;
+  }
+}
+
+
+/* ----- Mailchimp Landing Pages ----- */
+.confirm-subscription {
+  text-align: center;
+
+  section {
+    padding: $section-padding 100px;
+  }
+
+  @include respond-to('tablet-small') {
+    margin-bottom: $section-padding;
+
+    section {
+      padding: $section-padding-phone 30px;
+    }
+  }
+}
+
+.play-now {
+  @include opacity(1);
+  @include background-image(linear-gradient($ocean, $green));
+  @include border-radius(72px);
+  margin-top: 45px;
+  padding: 19px 36px;
+  display: inline-block;
+  border: 2px solid #d9d9d9;
+  color: #fff;
+  font-size: $font-size;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    @include opacity(0.8);
   }
 }
