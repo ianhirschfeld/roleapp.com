@@ -17,6 +17,12 @@
       "css": "facebook-circled",
       "code": 59392,
       "src": "mfglabs"
+    },
+    {
+      "uid": "7cb7e246fd23672429db603c0077dc79",
+      "css": "mail-circled",
+      "code": 59394,
+      "src": "elusive"
     }
   ]
 }
