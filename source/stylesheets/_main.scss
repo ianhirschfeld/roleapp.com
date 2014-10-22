@@ -36,21 +36,27 @@ section {
 }
 
 h1 {
-  @include text-overflow;
   width: 229px;
   height: 120px;
   margin: 0 auto;
-  background: image-url('role_logo.png') no-repeat 0 0;
-  background-size: 229px;
-  height: 120px;
 
-  @include respond-to('tablet-small') {
-    position: relative;
-    top: -18px;
-  }
+  a {
+    @include text-overflow;
+    width: 229px;
+    height: 120px;
+    display: block;
+    background: image-url('role_logo.png') no-repeat 0 0;
+    background-size: 229px;
+    height: 120px;
 
-  @include respond-to('phone') {
-    top: auto;
+    @include respond-to('tablet-small') {
+      position: relative;
+      top: -18px;
+    }
+
+    @include respond-to('phone') {
+      top: auto;
+    }
   }
 }
 
