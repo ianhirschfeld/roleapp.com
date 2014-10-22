@@ -30,11 +30,6 @@ a {
   text-decoration: none;
 }
 
-section {
-  max-width: $max-page-width;
-  margin: 0 auto;
-}
-
 h1 {
   width: 229px;
   height: 120px;
@@ -89,12 +84,6 @@ input {
 /*=============================================================================
   HELPERS
 =============================================================================*/
-.list-reset {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .gray {
   color: $gray;
 }
@@ -117,6 +106,36 @@ input {
 
 .red {
   color: $red;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-section {
+  max-width: $max-page-width;
+  margin: 0 auto;
+}
+
+.btn-main {
+  @include opacity(1);
+  @include background-image(linear-gradient($ocean, $green));
+  @include border-radius(72px);
+  @include transition(opacity .25s);
+  padding: 19px 36px;
+  display: inline-block;
+  border: 2px solid #d9d9d9;
+  color: #fff !important;
+  font-size: $font-size;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    @include opacity(0.8);
+    text-decoration: none !important;
+  }
 }
 
 /*=============================================================================
@@ -173,7 +192,7 @@ input {
 .sign-up,
 .social-icon {
   @include opacity(0.5);
-  @include transition(opacity 0.25s);
+  @include transition(opacity .25s);
 
   &:hover,
   &:focus {
@@ -211,12 +230,14 @@ input {
   }
 }
 
+#page-footer a,
 .thesoapcollective {
   color: $text-color;
   font-weight: bold;
 
   &:hover,
   &:focus {
+    color: $green;
     text-decoration: underline;
   }
 }
@@ -253,7 +274,7 @@ input {
 .truly-social {
   text-align: center;
 
-  section {
+  .page-section {
     padding: $section-padding 100px;
   }
 
@@ -262,33 +283,33 @@ input {
   }
 
   @include respond-to('tablet-small') {
-    section {
+    .page-section {
       padding: $section-padding-phone 30px;
     }
   }
 }
 
 .truly-social {
-  section {
+  .page-section {
     padding-top: $section-padding * 2;
   }
 
   @include respond-to('desktop') {
-    section {
+    .page-section {
       padding-left: 40px;
       padding-right: 40px;
     }
   }
 
   @include respond-to('tablet') {
-    section {
+    .page-section {
       padding-left: 20px;
       padding-right: 20px;
     }
   }
 
   @include respond-to('tablet-small') {
-    section {
+    .page-section {
       padding-top: $section-padding-phone;
     }
   }
@@ -476,7 +497,7 @@ input {
   @include respond-to('tablet-small') {
     .phone-section-left &,
     .phone-section-right & {
-      @include translateX(-50%);
+      margin-left: -(368px / 2);
       left: 50%;
       right: auto;
     }
@@ -501,7 +522,7 @@ input {
   }
 
   @include respond-to('tablet-small') {
-    @include translateX(-50%);
+    margin-left: -(654px / 2) !important;
     left: 50% !important;
     right: auto;
   }
@@ -574,7 +595,7 @@ input[type=submit] {
 
 .mc-submit-bg,
 .mc-submit-bg-alt {
-  @include transition(opacity 0.5s);
+  @include transition(opacity .5s);
 }
 
 .mc-submit-bg {
@@ -618,33 +639,200 @@ input[type=submit] {
 .confirm-subscription {
   text-align: center;
 
-  section {
+  .page-section {
     padding: $section-padding 100px;
+  }
+
+  .btn-main {
+    margin-top: 45px;
   }
 
   @include respond-to('tablet-small') {
     margin-bottom: $section-padding;
 
-    section {
+    .page-section {
       padding: $section-padding-phone 30px;
     }
   }
 }
 
-.play-now {
-  @include opacity(1);
-  @include background-image(linear-gradient($ocean, $green));
-  @include border-radius(72px);
-  margin-top: 45px;
-  padding: 19px 36px;
-  display: inline-block;
-  border: 2px solid #d9d9d9;
-  color: #fff;
-  font-size: $font-size;
-  font-weight: bold;
+/*=============================================================================
+  PRESS
+=============================================================================*/
+#press-page {
+  @include alt-clearfix;
+  max-width: $max-page-width;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: $gray;
+  font-size: $press-font-size;
 
-  &:hover,
-  &:focus {
-    @include opacity(0.8);
+  a {
+    color: $gray;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $green;
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: $pink;
+    font-size: $press-font-size-header;
+  }
+
+  h3 {
+    margin: 0 0 20px;
+    font-size: $press-font-size
+  }
+
+  p {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include respond-to('desktop') {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.press-nav {
+  width: $press-nav-width;
+  padding-top: 6px;
+  float: left;
+
+  li {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    font-weight: bold;
+  }
+
+  body.sticky-active & {
+    float: none;
+    position: fixed;
+    top: 20px;
+  }
+
+  @include respond-to('tablet-small') {
+    float: none;
+
+    body.sticky-active & {
+      position: static;
+      top: auto;
+    }
+  }
+}
+
+#press-container,
+#press-container-inner,
+#press-contact {
+  overflow: hidden;
+}
+
+#press-container {
+  body.sticky-active & {
+    padding-left: $press-nav-width;
+  }
+
+  @include respond-to('tablet-small') {
+    body.sticky-active & {
+      padding-left: 0;
+    }
+  }
+}
+
+.press-section {
+  margin-bottom: 45px;
+}
+
+#press-fact-sheet,
+#press-team,
+#press-contact {
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+#press-fact-sheet {
+  margin-right: 20px;
+  float: left;
+
+  @include respond-to('tablet') {
+    float: none;
+  }
+}
+
+.press-headshots {
+  margin-bottom: 10px;
+}
+
+.press-screenshot,
+.press-headshot,
+.press-role-logo,
+.press-role-icon,
+.press-role-icon-round {
+  margin-bottom: 15px;
+  display: inline-block;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.press-screenshot,
+.press-headshot {
+  img {
+    @include opacity(0);
+    @include transition(opacity .25s);
+  }
+}
+
+.press-screenshot {
+  width: 50%;
+}
+
+.press-headshot {
+  width: 49%;
+
+  &:first-child {
+    margin-right: 2%;
+  }
+}
+
+.press-role-logo {
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.press-role-icon,
+.press-role-icon-round {
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.press-role-icon {
+  margin-right: 30px;
+}
+
+#press-team {
+  width: 250px;
+  float: left;
+
+  @include respond-to('phone') {
+    float: none;
   }
 }

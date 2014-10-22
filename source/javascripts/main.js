@@ -1,4 +1,5 @@
 var $window = $(window);
+var $body = $('body');
 var $email = $('.email');
 
 var delay = (function(){
@@ -12,6 +13,12 @@ var delay = (function(){
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
+}
+
+function stickyStep() {
+  var winScrollTop = $window.scrollTop();
+  var height = $('#page-header').outerHeight() + 50;
+  $body.toggleClass('sticky-active', winScrollTop >= height - 20);
 }
 
 $email.keyup(function(){
@@ -47,6 +54,16 @@ $('.sign-up').click(function(event){
   });
 });
 
+$('.press-nav a').click(function(event){
+  event.preventDefault()
+  $a = $(this)
+  var $section = $($a.attr('href'))
+  var offset = $section.offset().top - 20
+  $('html, body').animate({
+    scrollTop: offset
+  }, 500);
+});
+
 $(document).ready(function(){
   if ($window.width() >= 768) {
     new WOW({
@@ -56,5 +73,17 @@ $(document).ready(function(){
 
   if ($window.width() <= 400) {
     $email.attr('placeholder', 'Sign up now!');
+  }
+
+  $('img.lazy').unveil(100, function(){
+    $(this).load(function() {
+        this.style.opacity = 1;
+      });
+  });
+
+  if ($('#press-page').length > 0) {
+    $window.scroll(function(){
+      stickyStep();
+    });
   }
 });
