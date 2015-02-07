@@ -1,64 +1,10 @@
 ---
-show_sign_up: true
+layout: splash_layout
 ---
 
-.multi-phones.bg-white
-  %section.phone-section.phone-section-right.page-section
-    .section-snippet.wow.fadeIn{'data-wow-duration' => '1s'}
-      %h2.pink A group storytelling adventure game!
-      %p.gray Role is all about your story. Gather your friends, become fantastic characters, and go on wild adventures. The only limit is your imagination.
-    .img-multi-phones.section-img.wow.fadeInUp{'data-wow-duration' => '1s', 'data-wow-offset' => 200}
-
-.coming-soon.bg-gray
-  %section.page-section
-    %h2.gray Coming Soon to iOS
-    %p.gray
-      Role will be launching on the App Store soon, but you can get started today! Sign up with your e-mail and we’ll send you info explaining how to play the game with only a pencil and paper
-      = succeed ':' do
-        %strong for free
-    = partial 'partials/mailchimp'
-
-.pick-up-and-play.bg-green-gradient
-  %section.phone-section.phone-section-left.page-section
-    .section-snippet.wow.fadeIn{'data-wow-duration' => '1s'}
-      %h2 Pick up and play
-      %p
-        Any time, anywhere. Role is built to be simple to learn and fast to play. Grab your friends and adventure on your lunch break, or get everyone together for a long story on the weekend.
-        %br>
-        %br>
-        Role gives you everything you need to tell your stories and have fun. No need to make it complicated.
-    .img-phone-01.section-img.wow.fadeInUp{'data-wow-duration' => '1s', 'data-wow-offset' => 200}
-
-.become-the-hero.bg-white
-  %section.phone-section.phone-section-right.page-section
-    .section-snippet.wow.fadeIn{'data-wow-duration' => '1s'}
-      %h2.red Become the hero
-      %p.peach
-        Who do you want to be? Do you dream of jetpacks and laser blasters? Maybe you’re a valiant knight on an epic quest, or an alien mystic consumed by secret power.
-        %br>
-        %br>
-        In Role, nothing and no one is impossible. Become anyone, do anything. It’s your story.
-    .img-phone-02.section-img.wow.fadeInUp{'data-wow-duration' => '1s', 'data-wow-offset' => 200}
-
-.dream-of-better-worlds.bg-pink-gradient
-  %section.phone-section.phone-section-left.page-section
-    .section-snippet.wow.fadeIn{'data-wow-duration' => '1s'}
-      %h2 Dream of better worlds
-      %p
-        Where will you go? Travel to distant solar systems, explore the keep of a mighty dragon, protect your city from giant kaiju, or create your own world from scratch.
-        %br>
-        %br>
-        Take your friends wherever your imagination leads you. With Role, every world is at your fingertips.
-    .img-phone-03.section-img.wow.fadeInUp{'data-wow-duration' => '1s', 'data-wow-offset' => 200}
-
-.truly-social.bg-white
-  %section.page-section
-    %h2.green A truly social game
-    %p.ocean
-      Less tapping, more talking. Role is all about face-to-face experiences. It’s a party game, a family game, an oh-my-god-this-road-trip-is-so-long game. It’s a game to bring people together.
-      %br>
-      %br>
-      Grab your best friends, grab your parents, grab a total stranger.
-      %br>
-      %strong Let’s imagine together.
-    = partial 'partials/mailchimp'
+%section.page-section
+  %h1 Role - Imagine Together
+  %a.download-app-store.mobile-show{href: '#'} Download Role on the App Store!
+  %h2 A Storytelling Party Game!
+  %p Role is all about your story. Gather your friends, become fantastic characters, and go on wild adventures. The only limit is your imagination.
+  %a.download-app-store{href: '#'} Download Role on the App Store!

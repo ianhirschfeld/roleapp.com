@@ -1,0 +1,20 @@
+{
+  "images": [
+    {"path": "press/Role_00_HomeScreen.png", "highres_path": "press/highres/Role_00_HomeScreen.png", "title": "Home"},
+    {"path": "press/Role_01_Welcome.png", "highres_path": "press/highres/Role_01_Welcome.png", "title": "Welcome"},
+    {"path": "press/Role_02_SelectChar.png", "highres_path": "press/highres/Role_02_SelectChar.png", "title": "Select Character"},
+    {"path": "press/Role_03_NameChar.png", "highres_path": "press/highres/Role_03_NameChar.png", "title": "Name Character"},
+    {"path": "press/Role_04_Char1.png", "highres_path": "press/highres/Role_04_Char1.png", "title": "Character 1"},
+    {"path": "press/Role_05_Char2.png", "highres_path": "press/highres/Role_05_Char2.png", "title": "Character 2"},
+    {"path": "press/Role_06_CharArt.png", "highres_path": "press/highres/Role_06_CharArt.png", "title": "Character Art"},
+    {"path": "press/Role_07_SelectAdv.png", "highres_path": "press/highres/Role_07_SelectAdv.png", "title": "Select Adventure"},
+    {"path": "press/Role_08_CustomAdv.png", "highres_path": "press/highres/Role_08_CustomAdv.png", "title": "Custom Adventure"},
+    {"path": "press/Role_09_ViewAdv.png", "highres_path": "press/highres/Role_09_ViewAdv.png", "title": "View Adventure"},
+    {"path": "press/Role_10_AdvArt.png", "highres_path": "press/highres/Role_10_AdvArt.png", "title": "Adventure Art"},
+    {"path": "press/Role_11_Difficulty.png", "highres_path": "press/highres/Role_11_Difficulty.png", "title": "Select Difficulty"},
+    {"path": "press/Role_12_Rolling.png", "highres_path": "press/highres/Role_12_Rolling.png", "title": "Rolling"},
+    {"path": "press/Role_13_Success.png", "highres_path": "press/highres/Role_13_Success.png", "title": "Roll Success"},
+    {"path": "press/Role_14_LevelUp.png", "highres_path": "press/highres/Role_14_LevelUp.png", "title": "Level Up"},
+    {"path": "press/Role_15_CharPack.png", "highres_path": "press/highres/Role_15_CharPack.png", "title": "Character Pack"}
+  ]
+}
