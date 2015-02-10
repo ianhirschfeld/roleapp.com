@@ -6,69 +6,47 @@
 /*=============================================================================
   TAGS
 =============================================================================*/
+html,
+body {
+  height: 100%;
+}
+
 html {
   color: $text-color;
   font-family: $font-family;
   font-size: $font-size;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-
-  @include respond-to('desktop') {
-    font-size: $font-size-tablet;
-  }
-
-  @include respond-to('phone') {
-    font-size: $font-size-phone;
-  }
 }
 
 body{
   background: #fff;
+
+  &.index {
+    background: #fff image-url('role_background.jpg') no-repeat center center;
+    background-size: cover;
+  }
 }
 
 a {
   text-decoration: none;
 }
 
-h1 {
-  width: 229px;
-  height: 120px;
-  margin: 0 auto;
-
-  a {
-    @include text-overflow;
-    width: 229px;
-    height: 120px;
-    display: block;
-    background: image-url('role_logo.png') no-repeat 0 0;
-    background-size: 229px;
-    height: 120px;
-
-    @include respond-to('tablet-small') {
-      position: relative;
-      top: -18px;
-    }
-
-    @include respond-to('phone') {
-      top: auto;
-    }
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 h2 {
   margin: 0 0 30px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
   line-height: 1.2;
+}
 
-  @include respond-to('desktop') {
-    font-size: 1.5rem;
-  }
-
-  @include respond-to('phone') {
-    font-size: 1.33rem;
-  }
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 p {
@@ -108,13 +86,27 @@ input {
   color: $red;
 }
 
+.faded-text {
+  @include opacity(.5);
+}
+
 .list-reset {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.center {
+  text-align: center;
+}
+
+.max-p-width {
+  max-width: $max-p-width;
+  margin: 0 auto;
+}
+
 .page-section {
+  @include alt-clearfix;
   max-width: $max-page-width;
   margin: 0 auto;
 }
@@ -138,38 +130,35 @@ input {
   }
 }
 
-/*=============================================================================
-  HEADER
-=============================================================================*/
-#page-header {
-  padding-top: 18px;
-  height: 262px;
-
-  @include respond-to('desktop') {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  @include respond-to('tablet-small') {
-    height: 190px;
-  }
-
-  @include respond-to('phone') {
-    height: 244px;
-  }
+.download-app-store {
+  @include text-overflow;
+  width: 222px;
+  height: 222px * 40px / 135px;
+  margin: 50px auto 0;
+  display: block;
+  background: image-url('app_store_badge.svg') no-repeat center center;
+  background-size: contain;
 }
 
+.mobile-show {
+  display: none;
+}
+
+body.is-touch .touch-hide {
+  display: none;
+}
+
+/*=============================================================================
+  PAGE NAV
+=============================================================================*/
 .navbar {
   @include alt-clearfix;
-  margin-bottom: 16px;
-
-  @include respond-to('tablet-small') {
-    margin-bottom: 0;
-  }
-
-  @include respond-to('phone') {
-    margin-bottom: 34px;
-  }
+  width: 100%;
+  padding-top: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z-index-top
 }
 
 .navbar-left {
@@ -189,7 +178,7 @@ input {
   }
 }
 
-.sign-up,
+.btn-nav,
 .social-icon {
   @include opacity(0.5);
   @include transition(opacity .25s);
@@ -200,13 +189,13 @@ input {
   }
 }
 
-.sign-up {
+.btn-nav {
   @include border-radius(36px);
   padding: 9px 24px;
   display: inline-block;
   background: #fff;
-  color: $red;
-  font-size: 18px;
+  color: #000;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
@@ -217,476 +206,157 @@ input {
 }
 
 /*=============================================================================
-  FOOTER
+  PAGE HEADER
 =============================================================================*/
-#page-footer {
-  padding: $section-padding 0;
-  text-align: center;
-  font-size: 0.6rem;
+.page-header {
+  padding: 80px 0;
+  background: #fff image-url('role_background.jpg') no-repeat center center;
+  background-size: cover;
 
-  @include respond-to('tablet-small') {
-    padding-top: 0;
-    padding-bottom: $section-padding-phone;
+  h1 {
+    width: 255px;
+    height: 108px;
+    margin: 0 auto;
+    display: block;
+
+    a {
+      @include text-overflow;
+      width: 255px;
+      height: 108px;
+      margin: 0 auto 50px;
+      display: block;
+      background: image-url('role_logo_color.png') no-repeat 0 0;
+      background-size: 255px 108px;
+    }
   }
 }
 
-#page-footer a,
-.thesoapcollective {
-  color: $text-color;
-  font-weight: bold;
+/*=============================================================================
+  PAGE FOOTER
+=============================================================================*/
+.page-footer {
+  @include alt-clearfix;
+  width: 100%;
+  padding-bottom: 18px;
+  position: relative;
+  z-index: $z-index-medium;
+  color: #000;
+  font-size: 0.75rem;
+  line-height: 1.3;
 
-  &:hover,
-  &:focus {
-    color: $green;
-    text-decoration: underline;
+  .page-section {
+    padding-top: 18px;
+    border-top: 1px solid $text-color;
   }
+
+  a {
+    @include opacity(.5);
+    @include transition(opacity .25s);
+    color: #000;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      @include opacity(1);
+    }
+  }
+
+  body.index & {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+
+    .page-section {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.footer-left {
+  float: left;
+}
+
+.footer-right {
+  float: right;
+  text-align: right;
 }
 
 /*=============================================================================
   CONTENT
 =============================================================================*/
-/* ----- Backgrounds ----- */
-.bg-white {
-  background: #fff;
-}
-
-.bg-gray {
-  background: #f2f2f2;
-}
-
-.bg-peach-gradient {
-  @include background-image(linear-gradient($red, $peach));
-  color: #fff;
-}
-
-.bg-green-gradient {
-  @include background-image(linear-gradient($ocean, $green));
-  color: #fff;
-}
-
-.bg-pink-gradient {
-  @include background-image(linear-gradient($gray, $pink));
-  color: #fff;
-}
-
-/* ----- Sections ----- */
-.coming-soon,
-.truly-social {
+#splash-content {
+  @include translateY(-50%);
+  max-width: 700px;
+  margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: $z-index-medium;
+  top: 50%;
 
-  .page-section {
-    padding: $section-padding 100px;
+  h1 {
+    @include text-overflow;
+    width: 255px;
+    height: 108px;
+    margin: 0 auto 50px;
+    background: image-url('role_logo_color.png') no-repeat 0 0;
+    background-size: 255px 108px;
+  }
+
+  h2 {
+    margin: 0 0 20px;
+    color: #fff;
   }
 
   p {
-    margin-bottom: $section-padding;
-  }
-
-  @include respond-to('tablet-small') {
-    .page-section {
-      padding: $section-padding-phone 30px;
-    }
+    color: #fff;
   }
 }
 
-.truly-social {
-  .page-section {
-    padding-top: $section-padding * 2;
-  }
-
-  @include respond-to('desktop') {
-    .page-section {
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-  }
-
-  @include respond-to('tablet') {
-    .page-section {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-
-  @include respond-to('tablet-small') {
-    .page-section {
-      padding-top: $section-padding-phone;
-    }
-  }
+.page-content {
+  padding: 60px 0;
 }
 
-.phone-section {
-  position: relative;
-  overflow: hidden;
-
-  .multi-phones & {
-    height: 435px + $section-padding;
-  }
-
-  .pick-up-and-play & {
-    height: 486px + $section-padding;
-  }
-
-  .become-the-hero & {
-    height: 450px + $section-padding;
-  }
-
-  .dream-of-better-worlds & {
-    height: 450px + $section-padding;
-  }
-
-  @include respond-to('desktop') {
-    .multi-phones & {
-      height: 383px + $section-padding;
-    }
-  }
-
-  @include respond-to('tablet-small') {
-    padding-top: $section-padding-phone;
-
-    .multi-phones &,
-    .pick-up-and-play &,
-    .become-the-hero &,
-    .dream-of-better-worlds & {
-      height: auto;
-    }
-  }
-}
-
-.phone-section-left {
-  text-align: left;
-
-  @include respond-to('tablet-small') {
-    text-align: center;
-  }
-}
-
-.phone-section-right {
-  text-align: right;
-
-  @include respond-to('tablet-small') {
-    text-align: center;
-  }
-}
-
-.section-snippet {
-  @include vertical-align;
-
-  .multi-phones & {
-    padding-left: 654px + 46px;
-  }
-
-  .pick-up-and-play & {
-    padding-right: 368px + 86px;
-  }
-
-  .become-the-hero & {
-    padding-left: 368px + 86px;
-  }
-
-  .dream-of-better-worlds & {
-    padding-right: 368px + 86px;
-  }
-
-  @include respond-to('desktop') {
-    .phone-section-left & {
-      padding-left: $snippet-padding-tablet;
-    }
-
-    .phone-section-right & {
-      padding-right: $snippet-padding-tablet;
-    }
-
-    .multi-phones & {
-      padding-left: 576px - 64px + 26px;
-    }
-  }
-
-  @include respond-to('tablet') {
-    .phone-section-left & {
-      padding-left: $snippet-padding-tablet-small;
-    }
-
-    .phone-section-right & {
-      padding-right: $snippet-padding-tablet-small;
-    }
-
-    .multi-phones & {
-      padding-left: 576px - 268px + 26px;
-    }
-
-    .pick-up-and-play & {
-      padding-right: 368px + $phone-img-offset-tablet-small + 40px;
-    }
-
-    .become-the-hero & {
-      padding-left: 368px + $phone-img-offset-tablet-small + 40px;
-    }
-
-    .dream-of-better-worlds & {
-      padding-right: 368px + $phone-img-offset-tablet-small + 40px;
-    }
-  }
-
-  @include respond-to('tablet-small') {
-    @include vertical-align-reset;
-
-    .phone-section-left &,
-    .phone-section-right & {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-
-    .multi-phones & {
-      padding-bottom: 383px + $section-padding-phone;
-    }
-
-    .pick-up-and-play & {
-      padding-bottom: 486px + $section-padding-phone;
-    }
-
-    .become-the-hero &,
-    .dream-of-better-worlds & {
-      padding-bottom: 450px + $section-padding-phone;
-    }
-  }
-
-  @include respond-to('phone') {
-    .phone-section-left &,
-    .phone-section-right & {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-}
-
-.section-img {
-  position: absolute;
-  bottom: 0;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-
-  .phone-section-left & {
-    right: $phone-img-offset;
-  }
-
-  .phone-section-right & {
-    left: $phone-img-offset;
-  }
-
-  @include respond-to('desktop') {
-    .phone-section-left & {
-      right: $phone-img-offset-tablet;
-    }
-
-    .phone-section-right & {
-      left: $phone-img-offset-tablet;
-    }
-  }
-
-  @include respond-to('tablet') {
-    .phone-section-left & {
-      right: $phone-img-offset-tablet-small;
-    }
-
-    .phone-section-right & {
-      left: $phone-img-offset-tablet-small;
-    }
-  }
-
-  @include respond-to('tablet-small') {
-    .phone-section-left &,
-    .phone-section-right & {
-      margin-left: -(368px / 2);
-      left: 50%;
-      right: auto;
-    }
-  }
-}
-
-.img-multi-phones {
-  width: 654px;
-  height: 435px;
-  background-image: image-url('multi_phones.jpg');
-  background-size: 654px 435px;
-
-  @include respond-to('desktop') {
-    width: 576px;
-    height: 383px;
-    background-size: 576px 383px;
-    left: -64px !important;
-  }
-
-  @include respond-to('tablet') {
-    left: -268px !important;
-  }
-
-  @include respond-to('tablet-small') {
-    margin-left: -(654px / 2) !important;
-    left: 50% !important;
-    right: auto;
-  }
-}
-
-.img-phone-01 {
-  width: 368px;
-  height: 486px;
-  background-image: image-url('phone_01.png');
-  background-size: 368px 486px;
-}
-
-.img-phone-02 {
-  width: 368px;
-  height: 450px;
-  background-image: image-url('phone_02.png');
-  background-size: 368px 450px;
-}
-
-.img-phone-03 {
-  width: 368px;
-  height: 450px;
-  background-image: image-url('phone_03.png');
-  background-size: 368px 450px;
-}
-
-/* ----- Mailchimp ----- */
-#mc_embed_signup {
-  max-width: 720px;
-  margin: 0 auto;
-  position: relative;
-
-  @include respond-to('tablet-small') {
-    .coming-soon & {
-      margin-left: -20px;
-      margin-right: -20px;
-    }
-
-    .truly-social & {
-      margin-left: -10px;
-      margin-right: -10px;
-    }
-  }
-}
-
-input[type=email] {
-  @include border-radius(72px);
-  @include box-shadow(0 3px 24px rgba(0,0,0,0.1));
+.role-video,
+.video-overlay {
   width: 100%;
-  height: 72px;
-  padding: 15px 82px 15px 38px;
-  border: 2px solid #d9d9d9;
-  font-size: $font-size;
-
-  @include respond-to('desktop') {
-    font-size: $font-size-tablet;
-  }
-}
-
-.mc-submit-bg,
-.mc-submit-bg-alt,
-input[type=submit] {
-  @include border-radius(68px);
-  width: 68px;
-  height: 68px;
+  height: 100%;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 0;
+  left: 0;
 }
 
-.mc-submit-bg,
-.mc-submit-bg-alt {
-  @include transition(opacity .5s);
+.role-video {
+  z-index: $z-index-bottom;
+  object-fit: cover;
 }
 
-.mc-submit-bg {
-  @include opacity(1);
-  @include background-image(linear-gradient($red, $peach));
-
-  .is-hovering & {
-    @include opacity(0.8);
-  }
-
-  .is-valid & {
-    @include opacity(0);
-  }
-}
-
-.mc-submit-bg-alt {
-  @include opacity(0);
-  @include background-image(linear-gradient($ocean, $green));
-
-  .is-valid & {
-    @include opacity(1);
-  }
-
-  .is-valid.is-hovering & {
-    @include opacity(0.8);
-  }
-}
-
-input[type=submit] {
-  background: image-url('arrow_right.png') no-repeat 26px center;
-  background-size: 22px 36px;
-  border: none;
-
-  #mc_embed_signup.is-valid & {
-    background-color: #b2cb5c;
-  }
-}
-
-
-/* ----- Mailchimp Landing Pages ----- */
-.confirm-subscription {
-  text-align: center;
-
-  .page-section {
-    padding: $section-padding 100px;
-  }
-
-  .btn-main {
-    margin-top: 45px;
-  }
-
-  @include respond-to('tablet-small') {
-    margin-bottom: $section-padding;
-
-    .page-section {
-      padding: $section-padding-phone 30px;
-    }
-  }
+.video-overlay {
+  @include opacity(.5);
+  z-index: $z-index-bottom + 1;
+  background: #000;
 }
 
 /*=============================================================================
   PRESS
 =============================================================================*/
-#press-page {
-  @include alt-clearfix;
-  max-width: $max-page-width;
-  margin: 0 auto;
-  padding-top: 50px;
-  color: $gray;
-  font-size: $press-font-size;
-
-  a {
-    color: $gray;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: $green;
-      text-decoration: underline;
-    }
-  }
+body.press {
+  font-size: 0.75rem;
 
   h2 {
     margin-bottom: 20px;
+    font-size: 1.25rem;
     color: $pink;
-    font-size: $press-font-size-header;
   }
 
   h3 {
-    margin: 0 0 20px;
-    font-size: $press-font-size
+    margin-bottom: 20px;
+    font-size: 0.75rem;
   }
 
   p {
@@ -697,9 +367,17 @@ input[type=submit] {
     }
   }
 
-  @include respond-to('desktop') {
-    padding-left: 10px;
-    padding-right: 10px;
+  .page-content {
+    a {
+      color: $gray;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $green;
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -725,15 +403,6 @@ input[type=submit] {
     position: fixed;
     top: 20px;
   }
-
-  @include respond-to('tablet-small') {
-    float: none;
-
-    body.sticky-active & {
-      position: static;
-      top: auto;
-    }
-  }
 }
 
 #press-container,
@@ -745,12 +414,6 @@ input[type=submit] {
 #press-container {
   body.sticky-active & {
     padding-left: $press-nav-width;
-  }
-
-  @include respond-to('tablet-small') {
-    body.sticky-active & {
-      padding-left: 0;
-    }
   }
 }
 
@@ -769,10 +432,6 @@ input[type=submit] {
 #press-fact-sheet {
   margin-right: 20px;
   float: left;
-
-  @include respond-to('tablet') {
-    float: none;
-  }
 }
 
 .press-headshots {
@@ -793,16 +452,12 @@ input[type=submit] {
   }
 }
 
-.press-screenshot,
-.press-headshot {
-  img {
-    @include opacity(0);
-    @include transition(opacity .25s);
-  }
-}
-
 .press-screenshot {
-  width: 50%;
+  width: 49%;
+
+  &:nth-child(odd) {
+    margin-right: 2%;
+  }
 }
 
 .press-headshot {
@@ -831,8 +486,107 @@ input[type=submit] {
 #press-team {
   width: 250px;
   float: left;
+}
 
-  @include respond-to('phone') {
+/*=============================================================================
+  RESPONSIVE
+=============================================================================*/
+@include respond-to('desktop') {
+  .page-section {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@include respond-to('tablet') {
+  #press-fact-sheet {
+    float: none;
+  }
+}
+
+@include respond-to('tablet-small') {
+  html,
+  body {
+    height: auto;
+  }
+
+  body.index {
+    .page-footer {
+      position: relative;
+    }
+
+    #splash-content {
+      @include translateY(0);
+      padding: 180px 0 80px;
+      position: relative;
+    }
+  }
+
+  #press-container {
+    body.sticky-active & {
+      padding-left: 0;
+    }
+  }
+
+  .press-nav {
+    float: none;
+
+    body.sticky-active & {
+      position: relative;
+      top: auto;
+    }
+  }
+}
+
+@include respond-to('phone') {
+  .mobile-show {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+
+  .navbar-left,
+  .navbar-right,
+  .footer-left,
+  .footer-right {
+    float: none;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .footer-right {
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .page-header {
+    padding-top: 150px;
+  }
+
+  .page-section {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .press-screenshot {
+    width: 100%;
+
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+  }
+
+  #press-team {
     float: none;
   }
 }

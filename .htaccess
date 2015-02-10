@@ -1,4 +1,0 @@
-RewriteCond %{HTTP_HOST} ^roleapp.com$
-RewriteRule ^.*$ http://www.roleapp.com%{REQUEST_URI} [R=301,L]
-
-Redirect 301 /forum /community

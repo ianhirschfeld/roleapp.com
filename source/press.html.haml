@@ -1,4 +1,4 @@
-#press-page
+%section.page-section
   %nav.press-nav.press-section
     %ul.list-reset
       %li
@@ -7,8 +7,6 @@
         %a{href: '#press-description'} Description
       %li
         %a{href: '#press-history'} History
-      %li
-        %a{href: '#press-download'} Download
       %li
         %a{href: '#press-images'} Images
       %li
@@ -51,7 +49,7 @@
           %a{href: 'https://www.facebook.com/thesoapcollective', target: '_blank'} facebook.com/thesoapcollective
 
         %h3 Releases:
-        %p Role (2014)
+        %p Role (2015)
 
         %h3 Address:
         %p
@@ -78,47 +76,17 @@
           %h3 Role
           %p Based on a simplified tabletop role playing game that Logan wrote in college, Role is an upcoming iOS game focused on collaborative storytelling and face-to-face interaction. It seeks to blend the imagination of games like Dungeons and Dragons with the simplicity of party games like Apples to Apples. Logan and Ian hope that the ease and speed of playing Role will open up tabletop RPGs to a wide range of people who have never enjoyed one before, as well as help existing tabletop players bring their favorite story experiences into more casual situations. While the full iOS release is coming soon, The Soap Collective have made the pen-and-paper rules for Role available online for free, so that anyone can start playing right away. Role is an attempt to bring people together, to use stories to create a truly social game.
 
-    %section#press-download.press-section
-      %h2 Download
-      %p Download the Role Gameplay Primer PDF, which includes a detailed overview of the game and rules to play with pen &amp; paper:
-      %a.btn-main{href: '/downloads/Role_Gameplay_Primer.pdf'} Download
-
     %section#press-images.press-section
       %h2 Images
       .press-screenshots
-        %a.press-screenshot{href: '/images/press/Role_00_HomeScreen.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_00_HomeScreen.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_01_CharacterSheet.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_01_CharacterSheet.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_02_CharacterArt.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_02_CharacterArt.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_03_BasicRoll.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_03_BasicRoll.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_04_SetDifficulty.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_04_SetDifficulty.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_05_RollNow.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_05_RollNow.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_06_RollInProgress.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_06_RollInProgress.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_07_Success.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_07_Success.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_08_LevelUp.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_08_LevelUp.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_09_AdventureConfirm.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_09_AdventureConfirm.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_10_CharacterSheet_Caster.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_10_CharacterSheet_Caster.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_11_CharacterArt_Caster.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_11_CharacterArt_Caster.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_12_CharacterSheet_Soldier.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_12_CharacterSheet_Soldier.png', class: 'lazy'
-        %a.press-screenshot{href: '/images/press/Role_13_CharacterArt_Soldier.png'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Role_13_CharacterArt_Soldier.png', class: 'lazy'
+        - data.role.images.each do |image|
+          %a.press-screenshot{href: image_path(image.highres_path)}<>
+            = image_tag image_path('phone_loading.png'), data: {src: image_path(image.path)}, alt: image.title, class: 'lazy'
       .press-headshots
         %a.press-headshot{href: '/images/press/Logan_Dwight_headshot.jpg'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Logan_Dwight_headshot.jpg', class: 'lazy'
+          = image_tag '/images/press/Logan_Dwight_headshot.jpg'
         %a.press-headshot{href: '/images/press/Ian_Hirschfeld_headshot.jpg'}<>
-          = image_tag 'loading.gif', 'data-src' => '/images/press/Ian_Hirschfeld_headshot.jpg', class: 'lazy'
+          = image_tag '/images/press/Ian_Hirschfeld_headshot.jpg'
       %p Download all images as a zip file:
       %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download
 
@@ -130,7 +98,7 @@
         = image_tag 'press/Role_Icon.png'
       %a.press-role-icon-round{href: '/images/press/Role_Icon_Round.png'}<>
         = image_tag 'press/Role_Icon_Round.png'
-      %p Download all images as a zip file:
+      %p Download all logos and icons as a zip file:
       %a.btn-main{href: '/downloads/Role_Logo_and_Icon.zip'} Download
 
     %section.press-section

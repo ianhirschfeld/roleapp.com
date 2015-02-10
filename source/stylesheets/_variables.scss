@@ -1,32 +1,21 @@
 // Main
 $max-page-width: 1200px;
-$section-padding: 54px;
-$section-padding-phone: 36px;
-$snippet-padding-tablet: 40px;
-$snippet-padding-tablet-small: 10px;
-$phone-img-offset: 0;
-$phone-img-offset-tablet: 10px;
-$phone-img-offset-tablet-small: -118px;
+$max-p-width: 700px;
+$press-nav-width: 240px;
+
+$z-index-bottom: 0;
+$z-index-medium: 5;
+$z-index-top: 10;
 
 // Fonts
 $font-family: 'futura-pt', Helvetica, sans-serif;
-$font-size: 30px;
-$font-size-tablet: 24px;
-$font-size-phone: 18px;
+$font-size: 24px;
 
 // Colors
-$text-color: #a9a9a9;
 $gray: #8b99a5;
 $green: #b2cb5c;
 $ocean: #81b5af;
 $peach: #fbac5c;
 $pink: #ff4d76;
 $red: #fc5a5a;
-
-
-// Press
-$press-nav-width: 240px;
-$press-font-size: 18px;
-$press-font-size-header: 30px;
-$press-screenshot-width: 1085px;
-$press-screenshot-height: 1782px;
+$text-color: $gray;

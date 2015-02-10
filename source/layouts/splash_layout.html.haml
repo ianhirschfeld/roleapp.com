@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    = partial 'partials/head'
+
+  %body{class: page_classes}
+    = partial 'partials/nav'
+
+    %article#splash-content
+      = yield
+
+    .video-overlay.mobile-hide.touch-hide
+    %video.role-video.mobile-hide.touch-hide{src: image_path('role_background_video.mp4'), autoplay: true, loop: true, muted: true}
+
+    = partial 'partials/footer'
+    = partial 'partials/js'
