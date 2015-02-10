@@ -18,6 +18,14 @@ function stickyStep() {
 }
 
 $(document).ready(function(){
+  var isTouch = 'ontouchstart' in window || 'onmsgesturechange' in window;
+  // Are we on a touch device?
+  if (isTouch) {
+    $('body').addClass('is-touch');
+  }
+
+  $('.popup').magnificPopup({type: 'iframe'});
+
   $('img.lazy').unveil(100);
 
   if ($('body.press').length > 0) {

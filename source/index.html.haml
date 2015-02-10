@@ -4,7 +4,7 @@ layout: splash_layout
 
 %section.page-section
   %h1 Role - Imagine Together
-  %a.download-app-store.mobile-show{href: '#'} Download Role on the App Store!
+  = partial 'partials/app_store_badge', locals: {button_class: 'mobile-show'}
   %h2 A Storytelling Party Game!
   %p Role is all about your story. Gather your friends, become fantastic characters, and go on wild adventures. The only limit is your imagination.
-  %a.download-app-store{href: '#'} Download Role on the App Store!
+  = partial 'partials/app_store_badge', locals: {button_class: 'mobile-hide'}

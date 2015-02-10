@@ -144,6 +144,10 @@ input {
   display: none;
 }
 
+body.is-touch .touch-hide {
+  display: none;
+}
+
 /*=============================================================================
   PAGE NAV
 =============================================================================*/
@@ -154,6 +158,7 @@ input {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: $z-index-top
 }
 
 .navbar-left {
@@ -233,6 +238,8 @@ input {
   @include alt-clearfix;
   width: 100%;
   padding-bottom: 18px;
+  position: relative;
+  z-index: $z-index-medium;
   color: #000;
   font-size: 0.75rem;
   line-height: 1.3;
@@ -289,6 +296,7 @@ input {
   margin: 0 auto;
   text-align: center;
   position: relative;
+  z-index: $z-index-medium;
   top: 50%;
 
   h1 {
@@ -312,6 +320,26 @@ input {
 
 .page-content {
   padding: 60px 0;
+}
+
+.role-video,
+.video-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.role-video {
+  z-index: $z-index-bottom;
+  object-fit: cover;
+}
+
+.video-overlay {
+  @include opacity(.5);
+  z-index: $z-index-bottom + 1;
+  background: #000;
 }
 
 /*=============================================================================
@@ -477,6 +505,23 @@ body.press {
 }
 
 @include respond-to('tablet-small') {
+  html,
+  body {
+    height: auto;
+  }
+
+  body.index {
+    .page-footer {
+      position: relative;
+    }
+
+    #splash-content {
+      @include translateY(0);
+      padding: 180px 0 80px;
+      position: relative;
+    }
+  }
+
   #press-container {
     body.sticky-active & {
       padding-left: 0;
@@ -487,33 +532,20 @@ body.press {
     float: none;
 
     body.sticky-active & {
-      position: static;
+      position: relative;
       top: auto;
     }
   }
 }
 
 @include respond-to('phone') {
-  html,
-  body {
-    height: auto;
-  }
-
-  body.index {
-    .page-footer {
-      position: static;
-    }
-
-    #splash-content {
-      @include translateY(0);
-      padding: 180px 0 80px;
-      position: static;
-    }
-  }
-
   .mobile-show {
     display: block;
     margin-bottom: 40px;
+  }
+
+  .mobile-hide {
+    display: none;
   }
 
   .navbar-left,
