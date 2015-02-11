@@ -8,7 +8,11 @@
       %li
         %a{href: '#press-history'} Company
       %li
-        %a{href: '#press-images'} Images
+        %a{href: '#press-trailer'} Trailer
+      %li
+        %a{href: '#press-screenshots'} Screenshots
+      %li
+        %a{href: '#press-art'} Art
       %li
         %a{href: '#press-logo'} Logo &amp; Icon
       %li
@@ -72,16 +76,28 @@
           %p The Soap Collective is a storytelling company based in San Francisco, CA. We believe in using technology and games to bring people together and create meaningful narrative experiences.
           %p Founded by best friends Logan Dwight and Ian Hirschfeld, The Soap Collective officially started in 2009. Having met when they were each 13 years old, Logan and Ian started collaborating on stop-motion films, website ideas, live-action shorts, and games from a young age. They always dreamed of starting their own studio one day and telling bigger stories. In 2009, while still in college, the duo founded The Soap Collective to be the official outlet for all their creative work. College was a busy time, however, and they had to shelve the company until they had more time on their hands. After graduation, Logan and Ian both moved to San Francisco, CA, where they spent 3 years working for various startups and game companies in the Bay Area. Notably, Logan was a web and game designer at Kabam Games for 2 years, and Ian was one of the founding members of the educational site HackDesign.org. In early 2014, they both left their jobs behind to devote their full attention to the rebirth of The Soap Collective. Their first commercial release is Role, a storytelling game for iOS coming in late 2014.
 
-    %section#press-images.press-section
-      %h2 Images
+    %section#press-trailer.press-section
+      %h2 Trailer
+      .video-container
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/_h4W4kjlCmU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+    %section#press-screenshots.press-section
+      %h2 Screenshots
       .press-screenshots
-        - data.role.images.each do |image|
+        - data.role.screenshots.each do |image|
           %a.press-screenshot{href: image_path(image.highres_path)}<>
             = image_tag image_path('phone_loading.png'), data: {src: image_path(image.path)}, alt: image.title, class: 'lazy'
+
+    %section#press-art.press-section
+      %h2 Art
+      .press-screenshots
+        - data.role.art.each do |image|
+          %a.press-screenshot{href: image_path(image.highres_path)}<>
+            = image_tag image_path('plain_loading.png'), data: {src: image_path(image.path)}, alt: image.title, class: 'lazy'
       .press-headshots
-        %a.press-headshot{href: '/images/press/Logan_Dwight_headshot.jpg'}<>
+        %a.press-headshot{href: '/images/press/highres/Logan_Dwight_headshot.jpg'}<>
           = image_tag '/images/press/Logan_Dwight_headshot.jpg'
-        %a.press-headshot{href: '/images/press/Ian_Hirschfeld_headshot.jpg'}<>
+        %a.press-headshot{href: '/images/press/highres/Ian_Hirschfeld_headshot.jpg'}<>
           = image_tag '/images/press/Ian_Hirschfeld_headshot.jpg'
       %p Download all images as a zip file:
       %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download

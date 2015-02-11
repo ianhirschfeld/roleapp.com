@@ -443,7 +443,7 @@ body.press {
 .press-role-logo,
 .press-role-icon,
 .press-role-icon-round {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: inline-block;
   text-align: center;
 
@@ -453,18 +453,30 @@ body.press {
 }
 
 .press-screenshot {
-  width: 49%;
+  width: 33%;
+  padding-left: 1%;
+  padding-right: 1%;
 
-  &:nth-child(odd) {
-    margin-right: 2%;
+  &:nth-child(3n+1) {
+    padding-left: 0;
+    padding-right: 2%;
+  }
+
+  &:nth-child(3n+3) {
+    padding-left: 2%;
+    padding-right: 0;
   }
 }
 
 .press-headshot {
-  width: 49%;
+  width: 50%;
 
   &:first-child {
-    margin-right: 2%;
+    padding-right: 1%;
+  }
+
+  &:last-child {
+    padding-left: 1%;
   }
 }
 
@@ -486,6 +498,23 @@ body.press {
 #press-team {
   width: 250px;
   float: left;
+}
+
+.video-container {
+  height: 0;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 56.27%; // Should match youtube embed aspect ratio (480 / 853).
+  overflow: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 /*=============================================================================
@@ -580,9 +609,15 @@ body.press {
 
   .press-screenshot {
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 
-    &:nth-child(odd) {
-      margin-right: 0;
+    &:nth-child(3n+1) {
+      padding-right: 0;
+    }
+
+    &:nth-child(3n+3) {
+      padding-left: 0;
     }
   }
 
