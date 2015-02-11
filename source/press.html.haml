@@ -83,6 +83,10 @@
 
     %section#press-screenshots.press-section
       %h2 Screenshots
+      %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download Press Images
+      %br
+      %br
+      %br
       .press-screenshots
         - data.role.screenshots.each do |image|
           %a.press-screenshot{href: image_path(image.highres_path)}<>
@@ -99,8 +103,6 @@
           = image_tag '/images/press/Logan_Dwight_headshot.jpg'
         %a.press-headshot{href: '/images/press/highres/Ian_Hirschfeld_headshot.jpg'}<>
           = image_tag '/images/press/Ian_Hirschfeld_headshot.jpg'
-      %p Download all images as a zip file:
-      %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download
 
     %section#press-logo.press-section
       %h2 Logo and Icon
@@ -110,8 +112,9 @@
         = image_tag 'press/Role_Icon.png'
       %a.press-role-icon-round{href: '/images/press/Role_Icon_Round.png'}<>
         = image_tag 'press/Role_Icon_Round.png'
-      %p Download all logos and icons as a zip file:
-      %a.btn-main{href: '/downloads/Role_Logo_and_Icon.zip'} Download
+      %br
+      %br
+      %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download Press Images
 
     %section.press-section
       %section#press-team.press-section
