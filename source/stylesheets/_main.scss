@@ -440,6 +440,7 @@ body.press {
 
 .press-screenshot,
 .press-headshot,
+.press-feature-image,
 .press-role-logo,
 .press-role-icon,
 .press-role-icon-round {
@@ -478,6 +479,10 @@ body.press {
   &:last-child {
     padding-left: 1%;
   }
+}
+
+.role-feature-image {
+  max-width: 100%;
 }
 
 .press-role-logo {
@@ -623,5 +628,11 @@ body.press {
 
   #press-team {
     float: none;
+  }
+
+  .btn-main {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
   }
 }

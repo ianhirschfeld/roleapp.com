@@ -10,6 +10,8 @@
       %li
         %a{href: '#press-trailer'} Trailer
       %li
+        %a{href: '#press-featureimage'} Feature Image
+      %li
         %a{href: '#press-screenshots'} Screenshots
       %li
         %a{href: '#press-art'} Art
@@ -81,12 +83,14 @@
       .video-container
         <iframe width="853" height="480" src="https://www.youtube.com/embed/_h4W4kjlCmU?rel=0" frameborder="0" allowfullscreen></iframe>
 
+    %section#press-featureimage.press-section
+      %h2 Feature Image
+      %a.press-feature-image{href: '/images/press/Role_Feature_Image.jpg'}<>
+        = image_tag 'press/Role_Feature_Image.jpg'
+      %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download Press Images
+
     %section#press-screenshots.press-section
       %h2 Screenshots
-      %a.btn-main{href: '/downloads/Role_Press_Images.zip'} Download Press Images
-      %br
-      %br
-      %br
       .press-screenshots
         - data.role.screenshots.each do |image|
           %a.press-screenshot{href: image_path(image.highres_path)}<>
