@@ -4,7 +4,18 @@ layout: splash_layout
 
 %section.page-section
   %h1 Role - Imagine Together
-  = partial 'partials/app_store_badge', locals: {button_class: 'mobile-show'}
+
+  .mobile-show
+    = partial 'partials/app_store_badge'
+    .mailing-list
+      %p Looking for Android?
+      %a{href: 'http://eepurl.com/6k_wT'} Join our mailing list!
+
   %h2 A Storytelling Party Game!
   %p Role is all about your story. Gather your friends, become fantastic characters, and go on wild adventures. The only limit is your imagination.
-  = partial 'partials/app_store_badge', locals: {button_class: 'mobile-hide'}
+
+  .mobile-hide
+    = partial 'partials/app_store_badge'
+    .mailing-list
+      %p Looking for Android?
+      %a{href: 'http://eepurl.com/6k_wT'} Join our mailing list!

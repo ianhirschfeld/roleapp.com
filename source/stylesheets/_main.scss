@@ -132,12 +132,19 @@ input {
 
 .download-app-store {
   @include text-overflow;
+  @include opacity(1);
+  @include transition(opacity .25s);
   width: 222px;
   height: 222px * 40px / 135px;
   margin: 50px auto 0;
   display: block;
   background: image-url('app_store_badge.svg') no-repeat center center;
   background-size: contain;
+
+  &:hover,
+  &:focus {
+    @include opacity(.5);
+  }
 }
 
 .mobile-show {
@@ -340,6 +347,24 @@ body.is-touch .touch-hide {
   @include opacity(.5);
   z-index: $z-index-bottom + 1;
   background: #000;
+}
+
+.mailing-list {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 0.75rem;
+
+  a {
+    @include opacity(1);
+    @include transition(opacity .25s);
+    color: #fff;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      @include opacity(.5);
+    }
+  }
 }
 
 /*=============================================================================
